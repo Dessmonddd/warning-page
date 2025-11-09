@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More About Scams</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            background-color: #f6785f;
+            font-family: 'Poppins', sans-serif;
+            color: #1e293B;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sub-heading {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .main-heading {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0;
+            margin: 0;
+        }
+
+        .content-area {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            /* Aligns officers and box at the bottom */
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .police-officer {
+            max-height: 350px;
+            height: auto;
+        }
+
+        .info-box {
+            background-color: #fdc79c;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .info-box p {
+            margin: 0 0 15px 0;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            font-weight: 700;
+        }
+
+        .red-flag {
+            color: #d7263d;
+            font-weight: 900;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 1024px) {
+            .content-area {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .police-officer {
+                max-height: 250px;
+                order: 2;
+                /* Change order to put police below text */
+            }
+
+            .info-box {
+                order: 1;
+            }
+
+            .main-heading {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <p class="sub-heading">Educational Purposes</p>
+        <h1 class="main-heading">You've been scammed!</h1>
+    </header>
+
+    <main class="content-area">
+
+        <!-- IMPORTANT: Make sure this image is in an 'images' folder -->
+        <img src="policeman.png" alt="Cartoon police officer holding up a hand to say stop"
+            class="police-officer">
+
+        <div class="info-box">
+            <p>Don't worry, this is just a demonstration.</p>
+            <p>
+                If this were a real scam, your personal data or money is
+                gone by now. Charity scammers often use individual
+                QR codes to trick people into donating money to them.
+                <strong class="red-flag">This is a red flag!</strong>
+            </p>
+            <p>
+                Always <strong>double-check</strong> before you scan!
+                Look for suspicious links, verify the sources,
+                and stay alert to <strong>protect yourself</strong>.
+            </p>
+        </div>
+
+        <!-- IMPORTANT: Make sure this image is in an 'images' folder -->
+        <img src="policewoman.png" alt="Cartoon police officer holding up a hand to say stop"
+            class="police-officer">
+
+    </main>
+
+</body>
+
+</html>

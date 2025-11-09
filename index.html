@@ -4,110 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warning</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>You've been scammed!</title>
 
+    <!-- Google Fonts for styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic reset and page setup */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            background-color: #f6785f;
+            /* Background color from the image */
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .container {
+        /* The main container box */
+        .scam-container {
+            background-color: #fdc79c;
+            /* Container color from the image */
+            padding: 40px 50px;
+            border-radius: 30px;
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            animation: slideIn 0.5s ease-out;
+            max-width: 90%;
+            width: 700px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
+        /* Warning Icon (SVG) */
         .warning-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
         }
 
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
+        /* Main headline text */
+        .scam-title {
+            font-family: 'Times New Roman', Times, serif;
+            color: #1e293b;
+            /* Dark text color from the image */
+            font-size: 3.5rem;
+            margin: 10px 0 25px 0;
+            padding-bottom: 15px;
         }
 
-        h1 {
-            color: #e74c3c;
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        p {
-            color: #555;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            background: #e74c3c;
+        /* "Learn More" button */
+        .learn-more-btn {
+            background-color: #a02d45;
+            /* Button color from the image */
             color: white;
-            padding: 15px 40px;
             border: none;
+            padding: 16px 38px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             border-radius: 50px;
-            font-size: 16px;
+            /* Fully rounded corners */
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             text-decoration: none;
-            display: inline-block;
         }
 
-        .btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        /* Hover effect for the button */
+        .learn-more-btn:hover {
+            background-color: #8a3443;
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .scam-title {
+                font-size: 2.5rem;
+            }
+
+            .scam-container {
+                padding: 30px 25px;
+            }
+
+            .warning-icon {
+                width: 80px;
+            }
+
+            .learn-more-btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="warning-icon">⚠️</div>
-        <h1>You Are Being Scammed</h1>
-        <p>This appears to be a fraudulent attempt. Please stop any transactions immediately and protect your personal
-            information.</p>
-        <button class="btn" onclick="alert('Stay safe! Never share personal information with untrusted sources.')">Learn
-            More</button>
+
+    <!-- 
+      BACKGROUND MUSIC
+      - The `autoplay` attribute tries to play the music automatically.
+        Note: Many modern browsers block autoplay with sound until the user interacts with the page.
+      - The `loop` attribute makes the music repeat.
+      - The `hidden` attribute hides the player controls from the user.
+      - IMPORTANT: Replace "audio/music.mp3" with the correct path to your MP3 file.
+    -->
+    <audio src="alarm.mp3" autoplay loop hidden></audio>
+
+    <div class="scam-container">
+        <!-- Warning Icon - SVG allows it to scale perfectly and needs no extra files -->
+        <svg class="warning-icon" viewBox="0 0 100 88" xmlns="http://www.w3.org/2000/svg">
+            <!-- white fill triangle -->
+            <path d="M50 10 L90 85 H10 Z" fill="#fffefe"></path>
+            <!-- red border -->
+            <path d="M50 10 L90 85 H10 Z" fill="none" stroke="#ea0000" stroke-width="8" stroke-linejoin="round"></path>
+            <!-- exclamation mark -->
+            <rect x="46" y="34" width="8" height="26" rx="2" fill="#020202"></rect>
+            <circle cx="50" cy="70" r="5" fill="#020202"></circle>
+        </svg>
+
+        <h1 class="scam-title">You've been scammed!</h1>
+
+        <a href="learn-more.html" class="learn-more-btn">Learn More</a>
     </div>
+
 </body>
 
 </html>
