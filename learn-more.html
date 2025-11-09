@@ -26,42 +26,49 @@
             margin-bottom: 30px;
         }
 
+        .sub-heading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Space between images and text */
+            margin-bottom: 10px;
+        }
+
+        .header-officer {
+            height: 80px; /* Controls the size of the officers */
+            width: auto;
+        }
+
         .sub-heading {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
+            margin: 0;
         }
 
         .main-heading {
             font-size: 4rem;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 0;
+            line-height: 1.1;
             margin: 0;
         }
 
         .content-area {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            /* Aligns officers and box at the bottom */
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .police-officer {
-            max-height: 350px;
-            height: auto;
+            align-items: center;
         }
 
         .info-box {
             background-color: #fdc79c;
             border-radius: 20px;
             padding: 30px;
-            max-width: 500px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
             font-size: 1.1rem;
             line-height: 1.6;
+            margin-top: 20px;
         }
 
         .info-box p {
@@ -82,25 +89,20 @@
         }
 
         /* Responsive adjustments for smaller screens */
-        @media (max-width: 1024px) {
-            .content-area {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
+        @media (max-width: 768px) {
+            .header-officer {
+                height: 50px; /* Make officers even smaller on phones */
             }
-
-            .police-officer {
-                max-height: 250px;
-                order: 2;
-                /* Change order to put police below text */
+            .sub-heading {
+                font-size: 1.1rem; /* Smaller text on phones */
             }
-
-            .info-box {
-                order: 1;
-            }
-
             .main-heading {
-                font-size: 3rem;
+                font-size: 2.5rem; /* Smaller main title */
+            }
+            .info-box {
+                padding: 25px;
+                font-size: 1rem;
+                max-width: 100%;
             }
         }
     </style>
@@ -108,17 +110,21 @@
 
 <body>
 
+    <!-- --- UPDATED HTML STRUCTURE --- -->
     <header class="header">
-        <p class="sub-heading">Educational Purposes</p>
+
+        <!-- Police officers are now inside this new container with the sub-heading -->
+        <div class="sub-heading-container">
+            <img src="policeman.png" alt="Cartoon police officer" class="header-officer">
+            <p class="sub-heading">Educational purposes</p>
+            <img src="policewoman.png" alt="Cartoon police officer" class="header-officer">
+        </div>
+
         <h1 class="main-heading">You've been scammed!</h1>
     </header>
 
+    <!-- The main area now ONLY contains the info box -->
     <main class="content-area">
-
-        <!-- IMPORTANT: Make sure this image is in an 'images' folder -->
-        <img src="policeman.png" alt="Cartoon police officer holding up a hand to say stop"
-            class="police-officer">
-
         <div class="info-box">
             <p>Don't worry, this is just a demonstration.</p>
             <p>
@@ -133,11 +139,6 @@
                 and stay alert to <strong>protect yourself</strong>.
             </p>
         </div>
-
-        <!-- IMPORTANT: Make sure this image is in an 'images' folder -->
-        <img src="policewoman.png" alt="Cartoon police officer holding up a hand to say stop"
-            class="police-officer">
-
     </main>
 
 </body>
